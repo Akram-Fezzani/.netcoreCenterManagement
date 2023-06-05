@@ -1,0 +1,16 @@
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\obj\Debug\netcoreapp3.1\Centre.Data.csproj.AssemblyReference.cache
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\obj\Debug\netcoreapp3.1\Centre.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\obj\Debug\netcoreapp3.1\Centre.Data.AssemblyInfoInputs.cache
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\obj\Debug\netcoreapp3.1\Centre.Data.AssemblyInfo.cs
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\obj\Debug\netcoreapp3.1\Centre.Data.csproj.CoreCompileInputs.cache
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\bin\Debug\netcoreapp3.1\Centre.Data.deps.json
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\bin\Debug\netcoreapp3.1\Centre.Data.runtimeconfig.json
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\bin\Debug\netcoreapp3.1\Centre.Data.runtimeconfig.dev.json
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\bin\Debug\netcoreapp3.1\Centre.Data.dll
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\bin\Debug\netcoreapp3.1\Centre.Data.pdb
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\bin\Debug\netcoreapp3.1\Centre.Domain.dll
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\bin\Debug\netcoreapp3.1\Centre.Domain.pdb
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\obj\Debug\netcoreapp3.1\Centre.Data.dll
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\obj\Debug\netcoreapp3.1\Centre.Data.pdb
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\obj\Debug\netcoreapp3.1\Centre.Data.genruntimeconfig.cache
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Data\obj\Debug\netcoreapp3.1\Centre.Data.csproj.CopyComplete

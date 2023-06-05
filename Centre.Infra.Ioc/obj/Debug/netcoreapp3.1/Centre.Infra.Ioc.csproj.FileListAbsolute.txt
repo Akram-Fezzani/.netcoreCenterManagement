@@ -1,0 +1,15 @@
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.csproj.AssemblyReference.cache
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.AssemblyInfoInputs.cache
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.AssemblyInfo.cs
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.csproj.CoreCompileInputs.cache
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\bin\Debug\netcoreapp3.1\Centre.Infra.Ioc.deps.json
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\bin\Debug\netcoreapp3.1\Centre.Infra.Ioc.dll
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\bin\Debug\netcoreapp3.1\Centre.Infra.Ioc.pdb
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\bin\Debug\netcoreapp3.1\Centre.Data.dll
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\bin\Debug\netcoreapp3.1\Centre.Domain.dll
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\bin\Debug\netcoreapp3.1\Centre.Data.pdb
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\bin\Debug\netcoreapp3.1\Centre.Domain.pdb
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.dll
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.pdb
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.csproj.CopyComplete
