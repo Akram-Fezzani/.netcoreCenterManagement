@@ -9,6 +9,7 @@ using System.Threading;
 using Centre.Domain.Handlers;
 using Centre.Domain.Queries;
 using Centre.Domain.Commands;
+using System.Linq;
 
 namespace BL.Api.Controllers
 {
@@ -79,5 +80,33 @@ namespace BL.Api.Controllers
             var GenericHandler = new RemoveGenericHandler<Collector>(Repository);
             return await GenericHandler.Handle(x, cancellation);
         }
+
+
+        [HttpGet("GetNumberOfCollectorss")]
+        public int GetNumberOfUsers()
+        {
+            IEnumerable<Collector> users = (new GetListGenericHandler<Collector>(Repository).Handle(new GetListGenericQuery<Collector>(null, null), cancellation).Result);
+            return users.Count();
+        }
+
+        [HttpGet("GetNumberOfCollectorsByCenter")]
+        public int GetNumberOfCollectorsByCenter(Guid id)
+        {
+            var x = 0;
+            IEnumerable<Collector> Collectors = (new GetListGenericHandler<Collector>(Repository).Handle(new GetListGenericQuery<Collector>(null, null), cancellation).Result);
+            foreach (var Collector in Collectors)
+            {
+                if (Collector.CenterId ==id)
+                {
+                    if(Collector.state== true)
+                    {
+                         x= x + 1;
+                    }
+                    
+                }
+            }
+            return (x);
+        }
+
     }
 }

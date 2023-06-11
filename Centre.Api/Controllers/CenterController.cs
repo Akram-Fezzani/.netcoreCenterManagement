@@ -82,5 +82,9 @@ namespace Centre.Api.Controllers
             var GenericHandler = new RemoveGenericHandler<Center>(Repository);
             return await GenericHandler.Handle(x, cancellation);
         }
+
+
+
+        
     }
 }

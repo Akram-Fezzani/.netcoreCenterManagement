@@ -130,22 +130,6 @@ namespace Centre.Api.Controllers
         }
 
     
-        
-        [HttpPost("AffectCenterToUser")]
-        public async Task<String> AffectCenterToUsers(Guid CenterId, Guid ChefCenterId)
-        {
-            String message = "";
-            using (var httpClient = new HttpClient(_clientHandler))
-            {
-            
-                using (var response = await httpClient.PostAsync("https://localhost:44317/api/ChefCenter/AffectChefToCenter?ChefCenterId=" + ChefCenterId + "&CenterId=" + CenterId))
-                {
-                    message = await response.Content.ReadAsStringAsync();
-
-                }
-            }
-            return message;
-        }
 
 
 

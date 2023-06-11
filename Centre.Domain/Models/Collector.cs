@@ -16,7 +16,8 @@ namespace Centre.Domain.Models
 
         [JsonIgnore]
         public Center Center { get; set; }
-
+        public Guid CenterId { get; set; }
+        public Boolean state { get; set; }
 
     }
 }

@@ -8,7 +8,7 @@ namespace Centre.Domain.Models
    public class Center
     {
         public Guid CenterId { get; set; }
-        public int CenterLabel { get; set; }
+        public string CenterLabel { get; set; }
         public int RotationActuelle { get; set; }
         public int CodeSpecification { get; set; }
         public int UsefulSurface { get; set; }
@@ -16,7 +16,7 @@ namespace Centre.Domain.Models
         public Boolean IsActive { get; set; }
         public int CenterCode { get; set; }
         public String SocialReason { get; set; }
-        public String BlPrefixNumber { get; set; }
+        public int BlPrefixNumber { get; set; }
 
         public virtual IList<Building> Buildings { get; set; }
         public virtual Antenna Antenna { get; set; }

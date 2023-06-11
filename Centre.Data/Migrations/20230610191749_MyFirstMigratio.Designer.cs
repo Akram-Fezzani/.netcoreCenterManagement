@@ -4,14 +4,16 @@ using Centre.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Centre.Data.Migrations
 {
     [DbContext(typeof(BLContext))]
-    partial class BLContextModelSnapshot : ModelSnapshot
+    [Migration("20230610191749_MyFirstMigratio")]
+    partial class MyFirstMigratio
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -159,7 +161,7 @@ namespace Centre.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CenterId")
+                    b.Property<Guid?>("CenterId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("CodeCollecteur")
@@ -173,9 +175,6 @@ namespace Centre.Data.Migrations
 
                     b.Property<int>("Telephone")
                         .HasColumnType("int");
-
-                    b.Property<bool>("state")
-                        .HasColumnType("bit");
 
                     b.HasKey("CollecteurId");
 
@@ -361,8 +360,7 @@ namespace Centre.Data.Migrations
                     b.HasOne("Centre.Domain.Models.Center", "Center")
                         .WithMany("Collectors")
                         .HasForeignKey("CenterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Centre.Domain.Models.Society", b =>

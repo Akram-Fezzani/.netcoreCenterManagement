@@ -156,3 +156,4 @@ C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\ne
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.pdb
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.genruntimeconfig.cache
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.csproj.CopyComplete
