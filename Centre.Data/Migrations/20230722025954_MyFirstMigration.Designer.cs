@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Centre.Data.Migrations
 {
     [DbContext(typeof(BLContext))]
-    [Migration("20230601183615_MyFirstMigration")]
+    [Migration("20230722025954_MyFirstMigration")]
     partial class MyFirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,11 +47,11 @@ namespace Centre.Data.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int>("BuildingAdress")
-                        .HasColumnType("int");
+                    b.Property<string>("BuildingAdress")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("BuildingArea")
-                        .HasColumnType("int");
+                    b.Property<string>("BuildingArea")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("BuildingCode")
                         .HasColumnType("int");
@@ -59,7 +59,7 @@ namespace Centre.Data.Migrations
                     b.Property<int>("BuildingLabel")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("CenterId")
+                    b.Property<Guid>("CenterId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Couvoir")
@@ -87,8 +87,8 @@ namespace Centre.Data.Migrations
                     b.Property<Guid?>("AntennaId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("BlPrefixNumber")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("BlPrefixNumber")
+                        .HasColumnType("int");
 
                     b.Property<int>("BuildingNumber")
                         .HasColumnType("int");
@@ -96,8 +96,8 @@ namespace Centre.Data.Migrations
                     b.Property<int>("CenterCode")
                         .HasColumnType("int");
 
-                    b.Property<int>("CenterLabel")
-                        .HasColumnType("int");
+                    b.Property<string>("CenterLabel")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CodeSpecification")
                         .HasColumnType("int");
@@ -161,7 +161,7 @@ namespace Centre.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("CenterId")
+                    b.Property<Guid>("CenterId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("CodeCollecteur")
@@ -176,11 +176,45 @@ namespace Centre.Data.Migrations
                     b.Property<int>("Telephone")
                         .HasColumnType("int");
 
+                    b.Property<bool>("state")
+                        .HasColumnType("bit");
+
                     b.HasKey("CollecteurId");
 
                     b.HasIndex("CenterId");
 
                     b.ToTable("Collectors");
+                });
+
+            modelBuilder.Entity("Centre.Domain.Models.DemandeVeto", b =>
+                {
+                    b.Property<Guid>("DemandeVetoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("BuildingId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Couvoir")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Souche")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("rotation")
+                        .HasColumnType("int");
+
+                    b.Property<string>("sujet")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DemandeVetoId");
+
+                    b.HasIndex("BuildingId");
+
+                    b.ToTable("DemandeVetos");
                 });
 
             modelBuilder.Entity("Centre.Domain.Models.Domaines", b =>
@@ -206,6 +240,37 @@ namespace Centre.Data.Migrations
                     b.ToTable("Domains");
                 });
 
+            modelBuilder.Entity("Centre.Domain.Models.FicheMedicale", b =>
+                {
+                    b.Property<Guid>("FicheMedicaleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Couvoir")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Rapport")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Souche")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("VeterinaireId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("rotation")
+                        .HasColumnType("int");
+
+                    b.HasKey("FicheMedicaleId");
+
+                    b.HasIndex("VeterinaireId");
+
+                    b.ToTable("FicheMedicale");
+                });
+
             modelBuilder.Entity("Centre.Domain.Models.Society", b =>
                 {
                     b.Property<Guid>("SocietyId")
@@ -218,7 +283,7 @@ namespace Centre.Data.Migrations
                     b.Property<int>("CapitalSocial")
                         .HasColumnType("int");
 
-                    b.Property<int>("CodeSociétés")
+                    b.Property<int>("CodeSocietes")
                         .HasColumnType("int");
 
                     b.Property<Guid?>("DomaineId")
@@ -269,6 +334,9 @@ namespace Centre.Data.Migrations
 
                     b.Property<int>("SpeculationCode")
                         .HasColumnType("int");
+
+                    b.Property<string>("SpeculationLabel")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SpeculationId");
 
@@ -325,12 +393,50 @@ namespace Centre.Data.Migrations
                     b.ToTable("Types");
                 });
 
+            modelBuilder.Entity("Centre.Domain.Models.Veterinaire", b =>
+                {
+                    b.Property<Guid>("VeterinaireId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AntennaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Phone")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("state")
+                        .HasColumnType("bit");
+
+                    b.HasKey("VeterinaireId");
+
+                    b.HasIndex("AntennaId");
+
+                    b.ToTable("Veterinaires");
+                });
+
             modelBuilder.Entity("Centre.Domain.Models.Building", b =>
                 {
-                    b.HasOne("Centre.Domain.Models.Center", "Center")
+                    b.HasOne("Centre.Domain.Models.Center", null)
                         .WithMany("Buildings")
                         .HasForeignKey("CenterId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Centre.Domain.Models.Center", b =>
@@ -360,7 +466,22 @@ namespace Centre.Data.Migrations
                     b.HasOne("Centre.Domain.Models.Center", "Center")
                         .WithMany("Collectors")
                         .HasForeignKey("CenterId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Centre.Domain.Models.DemandeVeto", b =>
+                {
+                    b.HasOne("Centre.Domain.Models.Building", "Building")
+                        .WithMany()
+                        .HasForeignKey("BuildingId");
+                });
+
+            modelBuilder.Entity("Centre.Domain.Models.FicheMedicale", b =>
+                {
+                    b.HasOne("Centre.Domain.Models.Veterinaire", "Veterinaire")
+                        .WithMany()
+                        .HasForeignKey("VeterinaireId");
                 });
 
             modelBuilder.Entity("Centre.Domain.Models.Society", b =>
@@ -399,6 +520,13 @@ namespace Centre.Data.Migrations
                         .HasForeignKey("SpeculationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Centre.Domain.Models.Veterinaire", b =>
+                {
+                    b.HasOne("Centre.Domain.Models.Antenna", "Antenna")
+                        .WithMany()
+                        .HasForeignKey("AntennaId");
                 });
 #pragma warning restore 612, 618
         }

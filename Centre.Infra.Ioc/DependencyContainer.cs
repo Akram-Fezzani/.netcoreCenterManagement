@@ -19,7 +19,6 @@ namespace Centre.Infra.Ioc
             //Repository
             services.AddTransient<IGenericRepository<ChefCenter>, GenericRepository<ChefCenter>>();
             services.AddTransient<IGenericRepository<User>, GenericRepository<User>>();
-
             services.AddTransient<IGenericRepository<Antenna>, GenericRepository<Antenna>>();
             services.AddTransient<IGenericRepository<Building>, GenericRepository<Building>>();
             services.AddTransient<IGenericRepository<Center>, GenericRepository<Center>>();
@@ -28,6 +27,9 @@ namespace Centre.Infra.Ioc
             services.AddTransient<IGenericRepository<Society>, GenericRepository<Society>>();
             services.AddTransient<IGenericRepository<Speculation>, GenericRepository<Speculation>>();
             services.AddTransient<IGenericRepository<Domain.Models.Type>, GenericRepository<Domain.Models.Type>>();
+            services.AddTransient<IGenericRepository<FicheMedicale>, GenericRepository<FicheMedicale>>();
+            services.AddTransient<IGenericRepository<DemandeVeto>, GenericRepository<DemandeVeto>>();
+            services.AddTransient<IGenericRepository<Veterinaire>, GenericRepository<Veterinaire>>();
 
 
 
@@ -57,13 +59,11 @@ namespace Centre.Infra.Ioc
             services.AddTransient<IRequestHandler<GetGenericQuery<Building>, Building>, GetGenericHandler<Building>>();
             services.AddTransient<IRequestHandler<PutGenericCommand<Building>, Building>, PutGenericHandler<Building>>();
             services.AddTransient<IRequestHandler<RemoveGenericCommand<Building>, Building>, RemoveGenericHandler<Building>>();
-            services.AddTransient<IRequestHandler<AddGenericCommand<Building>, Building>, AddGenericHandler<Building>>();
 
             services.AddTransient<IRequestHandler<GetListGenericQuery<Center>, IEnumerable<Center>>, GetListGenericHandler<Center>>();
             services.AddTransient<IRequestHandler<GetGenericQuery<Center>, Center>, GetGenericHandler<Center>>();
             services.AddTransient<IRequestHandler<PutGenericCommand<Center>, Center>, PutGenericHandler<Center>>();
             services.AddTransient<IRequestHandler<RemoveGenericCommand<Center>, Center>, RemoveGenericHandler<Center>>();
-            services.AddTransient<IRequestHandler<AddGenericCommand<Center>, Center>, AddGenericHandler<Center>>();
 
             services.AddTransient<IRequestHandler<GetListGenericQuery<Collector>, IEnumerable<Collector>>, GetListGenericHandler<Collector>>();
             services.AddTransient<IRequestHandler<GetGenericQuery<Collector>, Collector>, GetGenericHandler<Collector>>();

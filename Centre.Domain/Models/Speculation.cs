@@ -9,6 +9,8 @@ namespace Centre.Domain.Models
         public Guid SpeculationId { get; set; }
 
         public int SpeculationCode { get; set; }
+        public string SpeculationLabel { get; set; }
+
 
         public virtual IList<SpeculationCenter> SpeculationCenters { get; set; }
 

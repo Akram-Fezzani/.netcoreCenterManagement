@@ -7,7 +7,7 @@ namespace Centre.Domain.Models
    public class Society
     {
         public Guid SocietyId { get; set; }
-        public int CodeSociétés { get; set; }
+        public int CodeSocietes { get; set; }
 
         public String RaisonSocial { get; set; }
 

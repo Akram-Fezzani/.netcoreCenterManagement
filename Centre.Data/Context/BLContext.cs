@@ -23,6 +23,9 @@ namespace Centre.Data.Context
         public DbSet<Type> Types { get; set; }
         public DbSet<SocietyCenter> SocietyCenters { get; set; }
         public DbSet<SpeculationCenter> SpeculationCenters { get; set; }
+        public DbSet<FicheMedicale> FicheMedicale { get; set; }
+        public DbSet<Veterinaire> Veterinaires { get; set; }
+        public DbSet<DemandeVeto> DemandeVetos { get; set; }
 
         public DbSet<Speculation> Speculations { get; set; }
 
@@ -38,6 +41,9 @@ namespace Centre.Data.Context
             modelBuilder.Entity<Speculation>().HasKey(sc => (new { sc.SpeculationId }));
             modelBuilder.Entity<SocietyCenter>().HasKey(sc => (new { sc.SocietyCenterId }));
             modelBuilder.Entity<SpeculationCenter>().HasKey(sc => (new { sc.SpeculationCenterId }));
+            modelBuilder.Entity<Veterinaire>().HasKey(sc => new { sc.VeterinaireId });
+            modelBuilder.Entity<FicheMedicale>().HasKey(sc => new { sc.FicheMedicaleId });
+            modelBuilder.Entity<DemandeVeto>().HasKey(sc => new { sc.DemandeVetoId });
 
 
 
@@ -48,11 +54,11 @@ namespace Centre.Data.Context
                     .OnDelete(DeleteBehavior.Cascade);
 
 
-            modelBuilder.Entity<Building>()
+              /*   modelBuilder.Entity<Building>()
                   .HasOne(building => building.Center)
                   .WithMany(center => center.Buildings)
                   .HasForeignKey("CenterId")
-                  .OnDelete(DeleteBehavior.Cascade);
+                  .OnDelete(DeleteBehavior.Cascade);*/
 
 
 

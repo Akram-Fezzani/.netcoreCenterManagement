@@ -18,7 +18,8 @@ namespace Centre.Domain.Models
         public String SocialReason { get; set; }
         public int BlPrefixNumber { get; set; }
 
-        public virtual IList<Building> Buildings { get; set; }
+        public IList<Building> Buildings { get; set; }
+
         public virtual Antenna Antenna { get; set; }
 
         public virtual Type Type { get; set; }
