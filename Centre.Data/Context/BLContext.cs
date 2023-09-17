@@ -47,18 +47,18 @@ namespace Centre.Data.Context
 
 
 
-            modelBuilder.Entity<Center>()
+            /*   modelBuilder.Entity<Center>()
                     .HasOne(center => center.Antenna)
                     .WithMany(antenna => antenna.Centers)
                     .HasForeignKey("AntennaId")
                     .OnDelete(DeleteBehavior.Cascade);
 
 
-              /*   modelBuilder.Entity<Building>()
+              modelBuilder.Entity<Building>()
                   .HasOne(building => building.Center)
                   .WithMany(center => center.Buildings)
                   .HasForeignKey("CenterId")
-                  .OnDelete(DeleteBehavior.Cascade);*/
+                  .OnDelete(DeleteBehavior.Cascade);
 
 
 
@@ -66,7 +66,7 @@ namespace Centre.Data.Context
                   .HasOne(Center => Center.Type)
                   .WithMany(type => type.Centers)
                   .HasForeignKey("TypeId")
-                  .OnDelete(DeleteBehavior.Cascade);
+                  .OnDelete(DeleteBehavior.Cascade);*/
 
 
             modelBuilder.Entity<Collector>()

@@ -9082,25 +9082,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\akram\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Akram\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Api\\Centre.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Api\\Centre.Api.csproj",
       "projectName": "Centre.Api",
-      "projectPath": "C:\\Users\\akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Api\\Centre.Api.csproj",
-      "packagesPath": "C:\\Users\\akram\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Api\\obj\\",
+      "projectPath": "C:\\Users\\Akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Api\\Centre.Api.csproj",
+      "packagesPath": "C:\\Users\\Akram\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Api\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\akram\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Akram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9113,11 +9108,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Data\\Centre.Data.csproj": {
-              "projectPath": "C:\\Users\\akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Data\\Centre.Data.csproj"
+            "C:\\Users\\Akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Data\\Centre.Data.csproj": {
+              "projectPath": "C:\\Users\\Akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Data\\Centre.Data.csproj"
             },
-            "C:\\Users\\akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Infra.Ioc\\Centre.Infra.Ioc.csproj": {
-              "projectPath": "C:\\Users\\akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Infra.Ioc\\Centre.Infra.Ioc.csproj"
+            "C:\\Users\\Akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Infra.Ioc\\Centre.Infra.Ioc.csproj": {
+              "projectPath": "C:\\Users\\Akram\\Desktop\\BonDeLivraison\\CentreMicroService\\Centre.Infra.Ioc\\Centre.Infra.Ioc.csproj"
             }
           }
         }
@@ -9197,7 +9192,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

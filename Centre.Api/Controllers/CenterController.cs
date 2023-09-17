@@ -21,14 +21,19 @@ namespace Centre.Api.Controllers
     public class CenterController : ControllerBase
     {
         public IGenericRepository<Center> Repository;
+        public IGenericRepository<Building> BuildingRepository;
+        public IGenericRepository<DemandeVeto> DemandeVetoRepository;
+
         CancellationToken cancellation;
         private readonly IMapper _mapper;
 
 
 
-        public CenterController(IGenericRepository<Center> _Repository, IMapper mapper)
+        public CenterController(IGenericRepository<Center> _Repository, IGenericRepository<DemandeVeto> _DemandeVetoRepository, IGenericRepository<Building> _BuildingRepository, IMapper mapper)
         {
             Repository = _Repository;
+            BuildingRepository = _BuildingRepository;
+            DemandeVetoRepository = _DemandeVetoRepository;
             cancellation = new CancellationToken();
             _mapper = mapper;
         }
@@ -83,8 +88,46 @@ namespace Centre.Api.Controllers
             return await GenericHandler.Handle(x, cancellation);
         }
 
+        [HttpGet("GetBuildingsByCenterId")]
+        public IEnumerable<Building> GetBuildingsByCenterId(Guid IdCenter)
+        {
+            List<Building> list = new List<Building>();
 
+            IEnumerable<Building> Buildings = (new GetListGenericHandler<Building>(BuildingRepository).Handle(new GetListGenericQuery<Building>(null, null), cancellation).Result);
 
-        
+                foreach (var b in Buildings)
+                {
+                    if (IdCenter == b.CenterId)
+                    {
+                        list.Add(b);
+                    }
+                }
+            
+            IEnumerable<Building> BuildingsByCenter = list;
+            return BuildingsByCenter;
+        }
+
+        [HttpGet("GetDemandeVetoByCenterId")]
+
+        public IEnumerable<DemandeVeto> GetDemandeVetoByCenterId(Guid IdCenter)
+        {
+            List<DemandeVeto> list = new List<DemandeVeto>();
+
+            IEnumerable<Building> Buildings = GetBuildingsByCenterId(IdCenter);
+            IEnumerable<DemandeVeto> DemandeVetos = (new GetListGenericHandler<DemandeVeto>(DemandeVetoRepository).Handle(new GetListGenericQuery<DemandeVeto>(null, null), cancellation).Result);
+
+            foreach (var b in Buildings)
+            {
+                foreach (var d in DemandeVetos)
+                {
+                    if (b.BuildingId == d.BuildingId)
+                    {
+                        list.Add(d);
+                    }
+                }
+            }
+            IEnumerable<DemandeVeto> DemandeVetoByAntenna = list;
+            return DemandeVetoByAntenna;
+        }
     }
 }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Centre.Data.Migrations
 {
     [DbContext(typeof(BLContext))]
-    [Migration("20230722025954_MyFirstMigration")]
-    partial class MyFirstMigration
+    [Migration("20230823032925_Migration3")]
+    partial class Migration3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -68,12 +68,17 @@ namespace Centre.Data.Migrations
                     b.Property<string>("Souche")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("TypeId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("rotation")
                         .HasColumnType("int");
 
                     b.HasKey("BuildingId");
 
                     b.HasIndex("CenterId");
+
+                    b.HasIndex("TypeId");
 
                     b.ToTable("Buildings");
                 });
@@ -84,7 +89,7 @@ namespace Centre.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AntennaId")
+                    b.Property<Guid>("AntennaId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("BlPrefixNumber")
@@ -111,17 +116,12 @@ namespace Centre.Data.Migrations
                     b.Property<string>("SocialReason")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("TypeId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("UsefulSurface")
                         .HasColumnType("int");
 
                     b.HasKey("CenterId");
 
                     b.HasIndex("AntennaId");
-
-                    b.HasIndex("TypeId");
 
                     b.ToTable("Centers");
                 });
@@ -195,7 +195,7 @@ namespace Centre.Data.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("BuildingId")
+                    b.Property<Guid>("BuildingId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Couvoir")
@@ -211,8 +211,6 @@ namespace Centre.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("DemandeVetoId");
-
-                    b.HasIndex("BuildingId");
 
                     b.ToTable("DemandeVetos");
                 });
@@ -258,7 +256,7 @@ namespace Centre.Data.Migrations
                     b.Property<string>("Souche")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("VeterinaireId")
+                    b.Property<Guid>("VeterinaireId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("rotation")
@@ -399,7 +397,7 @@ namespace Centre.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AntennaId")
+                    b.Property<Guid>("CenterId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Email")
@@ -425,7 +423,7 @@ namespace Centre.Data.Migrations
 
                     b.HasKey("VeterinaireId");
 
-                    b.HasIndex("AntennaId");
+                    b.HasIndex("CenterId");
 
                     b.ToTable("Veterinaires");
                 });
@@ -437,19 +435,21 @@ namespace Centre.Data.Migrations
                         .HasForeignKey("CenterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Centre.Domain.Models.Type", null)
+                        .WithMany("Buildings")
+                        .HasForeignKey("TypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Centre.Domain.Models.Center", b =>
                 {
-                    b.HasOne("Centre.Domain.Models.Antenna", "Antenna")
+                    b.HasOne("Centre.Domain.Models.Antenna", null)
                         .WithMany("Centers")
                         .HasForeignKey("AntennaId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Centre.Domain.Models.Type", "Type")
-                        .WithMany("Centers")
-                        .HasForeignKey("TypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Centre.Domain.Models.ChefCenter", b =>
@@ -470,18 +470,13 @@ namespace Centre.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Centre.Domain.Models.DemandeVeto", b =>
-                {
-                    b.HasOne("Centre.Domain.Models.Building", "Building")
-                        .WithMany()
-                        .HasForeignKey("BuildingId");
-                });
-
             modelBuilder.Entity("Centre.Domain.Models.FicheMedicale", b =>
                 {
-                    b.HasOne("Centre.Domain.Models.Veterinaire", "Veterinaire")
-                        .WithMany()
-                        .HasForeignKey("VeterinaireId");
+                    b.HasOne("Centre.Domain.Models.Veterinaire", null)
+                        .WithMany("FicheMedicales")
+                        .HasForeignKey("VeterinaireId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Centre.Domain.Models.Society", b =>
@@ -524,9 +519,11 @@ namespace Centre.Data.Migrations
 
             modelBuilder.Entity("Centre.Domain.Models.Veterinaire", b =>
                 {
-                    b.HasOne("Centre.Domain.Models.Antenna", "Antenna")
-                        .WithMany()
-                        .HasForeignKey("AntennaId");
+                    b.HasOne("Centre.Domain.Models.Center", null)
+                        .WithMany("Veterinaires")
+                        .HasForeignKey("CenterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

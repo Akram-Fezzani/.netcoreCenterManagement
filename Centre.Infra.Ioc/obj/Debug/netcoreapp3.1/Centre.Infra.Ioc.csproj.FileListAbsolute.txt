@@ -1,5 +1,4 @@
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.csproj.AssemblyReference.cache
-C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.AssemblyInfoInputs.cache
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.AssemblyInfo.cs
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Infra.Ioc\obj\Debug\netcoreapp3.1\Centre.Infra.Ioc.csproj.CoreCompileInputs.cache

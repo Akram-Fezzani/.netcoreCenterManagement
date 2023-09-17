@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Centre.Data.Migrations
 {
-    public partial class MyFirstMigration : Migration
+    public partial class Migration3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,6 +18,23 @@ namespace Centre.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Antennas", x => x.AntennaId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DemandeVetos",
+                columns: table => new
+                {
+                    DemandeVetoId = table.Column<Guid>(nullable: false),
+                    BuildingId = table.Column<Guid>(nullable: false),
+                    Couvoir = table.Column<int>(nullable: false),
+                    Souche = table.Column<string>(nullable: true),
+                    Age = table.Column<int>(nullable: false),
+                    rotation = table.Column<int>(nullable: false),
+                    sujet = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DemandeVetos", x => x.DemandeVetoId);
                 });
 
             migrationBuilder.CreateTable(
@@ -62,28 +79,30 @@ namespace Centre.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Veterinaires",
+                name: "Centers",
                 columns: table => new
                 {
-                    VeterinaireId = table.Column<Guid>(nullable: false),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    Username = table.Column<string>(nullable: true),
-                    Phone = table.Column<int>(nullable: false),
-                    state = table.Column<bool>(nullable: false),
-                    Email = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true),
-                    AntennaId = table.Column<Guid>(nullable: true)
+                    CenterId = table.Column<Guid>(nullable: false),
+                    CenterLabel = table.Column<string>(nullable: true),
+                    RotationActuelle = table.Column<int>(nullable: false),
+                    CodeSpecification = table.Column<int>(nullable: false),
+                    UsefulSurface = table.Column<int>(nullable: false),
+                    BuildingNumber = table.Column<int>(nullable: false),
+                    IsActive = table.Column<bool>(nullable: false),
+                    CenterCode = table.Column<int>(nullable: false),
+                    SocialReason = table.Column<string>(nullable: true),
+                    BlPrefixNumber = table.Column<int>(nullable: false),
+                    AntennaId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Veterinaires", x => x.VeterinaireId);
+                    table.PrimaryKey("PK_Centers", x => x.CenterId);
                     table.ForeignKey(
-                        name: "FK_Veterinaires_Antennas_AntennaId",
+                        name: "FK_Centers_Antennas_AntennaId",
                         column: x => x.AntennaId,
                         principalTable: "Antennas",
                         principalColumn: "AntennaId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -110,63 +129,6 @@ namespace Centre.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Centers",
-                columns: table => new
-                {
-                    CenterId = table.Column<Guid>(nullable: false),
-                    CenterLabel = table.Column<string>(nullable: true),
-                    RotationActuelle = table.Column<int>(nullable: false),
-                    CodeSpecification = table.Column<int>(nullable: false),
-                    UsefulSurface = table.Column<int>(nullable: false),
-                    BuildingNumber = table.Column<int>(nullable: false),
-                    IsActive = table.Column<bool>(nullable: false),
-                    CenterCode = table.Column<int>(nullable: false),
-                    SocialReason = table.Column<string>(nullable: true),
-                    BlPrefixNumber = table.Column<int>(nullable: false),
-                    AntennaId = table.Column<Guid>(nullable: true),
-                    TypeId = table.Column<Guid>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Centers", x => x.CenterId);
-                    table.ForeignKey(
-                        name: "FK_Centers_Antennas_AntennaId",
-                        column: x => x.AntennaId,
-                        principalTable: "Antennas",
-                        principalColumn: "AntennaId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Centers_Types_TypeId",
-                        column: x => x.TypeId,
-                        principalTable: "Types",
-                        principalColumn: "TypeId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "FicheMedicale",
-                columns: table => new
-                {
-                    FicheMedicaleId = table.Column<Guid>(nullable: false),
-                    VeterinaireId = table.Column<Guid>(nullable: true),
-                    Couvoir = table.Column<int>(nullable: false),
-                    Souche = table.Column<string>(nullable: true),
-                    Age = table.Column<int>(nullable: false),
-                    rotation = table.Column<int>(nullable: false),
-                    Rapport = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FicheMedicale", x => x.FicheMedicaleId);
-                    table.ForeignKey(
-                        name: "FK_FicheMedicale_Veterinaires_VeterinaireId",
-                        column: x => x.VeterinaireId,
-                        principalTable: "Veterinaires",
-                        principalColumn: "VeterinaireId",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Buildings",
                 columns: table => new
                 {
@@ -179,6 +141,7 @@ namespace Centre.Data.Migrations
                     Souche = table.Column<string>(nullable: true),
                     Age = table.Column<int>(nullable: false),
                     rotation = table.Column<int>(nullable: false),
+                    TypeId = table.Column<Guid>(nullable: false),
                     CenterId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
@@ -189,6 +152,12 @@ namespace Centre.Data.Migrations
                         column: x => x.CenterId,
                         principalTable: "Centers",
                         principalColumn: "CenterId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Buildings_Types_TypeId",
+                        column: x => x.TypeId,
+                        principalTable: "Types",
+                        principalColumn: "TypeId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -238,32 +207,6 @@ namespace Centre.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SocietyCenters",
-                columns: table => new
-                {
-                    SocietyCenterId = table.Column<Guid>(nullable: false),
-                    SocietyId = table.Column<Guid>(nullable: false),
-                    CenterId = table.Column<Guid>(nullable: false),
-                    Date = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SocietyCenters", x => x.SocietyCenterId);
-                    table.ForeignKey(
-                        name: "FK_SocietyCenters_Centers_CenterId",
-                        column: x => x.CenterId,
-                        principalTable: "Centers",
-                        principalColumn: "CenterId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SocietyCenters_Societys_SocietyId",
-                        column: x => x.SocietyId,
-                        principalTable: "Societys",
-                        principalColumn: "SocietyId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "SpeculationCenters",
                 columns: table => new
                 {
@@ -293,26 +236,77 @@ namespace Centre.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DemandeVetos",
+                name: "Veterinaires",
                 columns: table => new
                 {
-                    DemandeVetoId = table.Column<Guid>(nullable: false),
-                    BuildingId = table.Column<Guid>(nullable: true),
+                    VeterinaireId = table.Column<Guid>(nullable: false),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    Username = table.Column<string>(nullable: true),
+                    Phone = table.Column<int>(nullable: false),
+                    state = table.Column<bool>(nullable: false),
+                    Email = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true),
+                    CenterId = table.Column<Guid>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Veterinaires", x => x.VeterinaireId);
+                    table.ForeignKey(
+                        name: "FK_Veterinaires_Centers_CenterId",
+                        column: x => x.CenterId,
+                        principalTable: "Centers",
+                        principalColumn: "CenterId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SocietyCenters",
+                columns: table => new
+                {
+                    SocietyCenterId = table.Column<Guid>(nullable: false),
+                    SocietyId = table.Column<Guid>(nullable: false),
+                    CenterId = table.Column<Guid>(nullable: false),
+                    Date = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SocietyCenters", x => x.SocietyCenterId);
+                    table.ForeignKey(
+                        name: "FK_SocietyCenters_Centers_CenterId",
+                        column: x => x.CenterId,
+                        principalTable: "Centers",
+                        principalColumn: "CenterId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SocietyCenters_Societys_SocietyId",
+                        column: x => x.SocietyId,
+                        principalTable: "Societys",
+                        principalColumn: "SocietyId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FicheMedicale",
+                columns: table => new
+                {
+                    FicheMedicaleId = table.Column<Guid>(nullable: false),
+                    VeterinaireId = table.Column<Guid>(nullable: false),
                     Couvoir = table.Column<int>(nullable: false),
                     Souche = table.Column<string>(nullable: true),
                     Age = table.Column<int>(nullable: false),
                     rotation = table.Column<int>(nullable: false),
-                    sujet = table.Column<string>(nullable: true)
+                    Rapport = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DemandeVetos", x => x.DemandeVetoId);
+                    table.PrimaryKey("PK_FicheMedicale", x => x.FicheMedicaleId);
                     table.ForeignKey(
-                        name: "FK_DemandeVetos_Buildings_BuildingId",
-                        column: x => x.BuildingId,
-                        principalTable: "Buildings",
-                        principalColumn: "BuildingId",
-                        onDelete: ReferentialAction.Restrict);
+                        name: "FK_FicheMedicale_Veterinaires_VeterinaireId",
+                        column: x => x.VeterinaireId,
+                        principalTable: "Veterinaires",
+                        principalColumn: "VeterinaireId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -321,14 +315,14 @@ namespace Centre.Data.Migrations
                 column: "CenterId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Buildings_TypeId",
+                table: "Buildings",
+                column: "TypeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Centers_AntennaId",
                 table: "Centers",
                 column: "AntennaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Centers_TypeId",
-                table: "Centers",
-                column: "TypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ChefCenter_CenterId",
@@ -340,11 +334,6 @@ namespace Centre.Data.Migrations
                 name: "IX_Collectors_CenterId",
                 table: "Collectors",
                 column: "CenterId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DemandeVetos_BuildingId",
-                table: "DemandeVetos",
-                column: "BuildingId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_FicheMedicale_VeterinaireId",
@@ -377,13 +366,16 @@ namespace Centre.Data.Migrations
                 column: "SpeculationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Veterinaires_AntennaId",
+                name: "IX_Veterinaires_CenterId",
                 table: "Veterinaires",
-                column: "AntennaId");
+                column: "CenterId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Buildings");
+
             migrationBuilder.DropTable(
                 name: "ChefCenter");
 
@@ -403,7 +395,7 @@ namespace Centre.Data.Migrations
                 name: "SpeculationCenters");
 
             migrationBuilder.DropTable(
-                name: "Buildings");
+                name: "Types");
 
             migrationBuilder.DropTable(
                 name: "Veterinaires");
@@ -422,9 +414,6 @@ namespace Centre.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Antennas");
-
-            migrationBuilder.DropTable(
-                name: "Types");
         }
     }
 }

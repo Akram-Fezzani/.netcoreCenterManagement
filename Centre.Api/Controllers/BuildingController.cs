@@ -121,5 +121,28 @@ namespace Centre.Api.Controllers
             }
             return bbc;
         }
+        /*
+
+        [HttpGet("GetDemandeVetoByCenterId")]
+        public IEnumerable<DemandeVeto> GetDemandeVetoByCenterId(Guid IdAntenna)
+        {
+            List<DemandeVeto> list = new List<DemandeVeto>();
+
+            IEnumerable<Building> Buildings = GetBuildingsByAntennaId(IdAntenna);
+            IEnumerable<DemandeVeto> DemandeVetos = (new GetListGenericHandler<DemandeVeto>(DemandeVetoRepository).Handle(new GetListGenericQuery<DemandeVeto>(null, null), cancellation).Result);
+
+            foreach (var b in Buildings)
+            {
+                foreach (var d in DemandeVetos)
+                {
+                    if (b.BuildingId == d.BuildingId)
+                    {
+                        list.Add(d);
+                    }
+                }
+            }
+            IEnumerable<DemandeVeto> DemandeVetoByAntenna = list;
+            return DemandeVetoByAntenna;
+        }*/
     }
 }

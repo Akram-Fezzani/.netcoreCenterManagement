@@ -7,7 +7,7 @@ namespace Centre.Domain.Models
   public  class FicheMedicale
     {
         public Guid FicheMedicaleId { get; set; }
-        public Veterinaire Veterinaire { get; set; }
+        public Guid VeterinaireId { get; set; }
       
         public int Couvoir { get; set; }
         public string Souche { get; set; }

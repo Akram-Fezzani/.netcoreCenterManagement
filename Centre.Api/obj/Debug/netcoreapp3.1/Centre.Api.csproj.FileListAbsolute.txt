@@ -1,5 +1,4 @@
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.csproj.AssemblyReference.cache
-C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.AssemblyInfoInputs.cache
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.AssemblyInfo.cs
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.csproj.CoreCompileInputs.cache
@@ -150,10 +149,9 @@ C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\bin\Debug\ne
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\bin\Debug\netcoreapp3.1\Centre.Domain.pdb
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\staticwebassets\Centre.Api.StaticWebAssets.Manifest.cache
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\staticwebassets\Centre.Api.StaticWebAssets.xml
-C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\scopedcss\bundle\Centre.Api.styles.css
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.RazorTargetAssemblyInfo.cache
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.dll
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.pdb
-C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.genruntimeconfig.cache
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.csproj.CopyComplete
+C:\Users\Akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Api\obj\Debug\netcoreapp3.1\Centre.Api.csproj.CopyComplete

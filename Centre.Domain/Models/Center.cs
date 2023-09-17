@@ -20,9 +20,8 @@ namespace Centre.Domain.Models
 
         public IList<Building> Buildings { get; set; }
 
-        public virtual Antenna Antenna { get; set; }
+        public Guid AntennaId { get; set; }
 
-        public virtual Type Type { get; set; }
 
         public virtual ChefCenter ChefCenter { get; set; }
 
@@ -31,6 +30,8 @@ namespace Centre.Domain.Models
         public virtual IList<SpeculationCenter> SpeculationCenters { get; set; }
 
         public virtual IList<SocietyCenter> SocietyCenters { get; set; }
+
+        public virtual IList<Veterinaire> Veterinaires { get; set; }
 
     }
 }

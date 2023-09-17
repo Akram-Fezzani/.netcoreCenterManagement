@@ -13,7 +13,7 @@ namespace Centre.Domain.Models
         public String LibSouche { get; set; }
         public int CodeSouche { get; set; }
 
-        public virtual IList<Center> Centers { get; set; }
+        public virtual IList<Building> Buildings { get; set; }
 
 
     }

@@ -2,7 +2,6 @@ C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Domain\bin\Debug
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Domain\bin\Debug\netcoreapp3.1\Centre.Domain.dll
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Domain\bin\Debug\netcoreapp3.1\Centre.Domain.pdb
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Domain\obj\Debug\netcoreapp3.1\Centre.Domain.csproj.AssemblyReference.cache
-C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Domain\obj\Debug\netcoreapp3.1\Centre.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Domain\obj\Debug\netcoreapp3.1\Centre.Domain.AssemblyInfoInputs.cache
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Domain\obj\Debug\netcoreapp3.1\Centre.Domain.AssemblyInfo.cs
 C:\Users\akram\Desktop\BonDeLivraison\CentreMicroService\Centre.Domain\obj\Debug\netcoreapp3.1\Centre.Domain.csproj.CoreCompileInputs.cache

@@ -36,7 +36,7 @@ namespace BL.Api.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("Get Veterinaires")]
+        [HttpGet("GetVeterinaires")]
         public IEnumerable<Veterinaire> getAllVeterinaires()
         {
             return (new GetListGenericHandler<Veterinaire>(Repository).Handle(new GetListGenericQuery<Veterinaire>(null, null), cancellation).Result);

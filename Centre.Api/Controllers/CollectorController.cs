@@ -108,5 +108,25 @@ namespace BL.Api.Controllers
             return (x);
         }
 
+
+        [HttpGet("GetCollectorsByCenterId")]
+        public IEnumerable<Collector> GetCollectorsByCenterId(Guid IdCenter)
+        {
+            List<Collector> list = new List<Collector>();
+
+            IEnumerable<Collector> Collectors = (new GetListGenericHandler<Collector>(Repository).Handle(new GetListGenericQuery<Collector>(null, null), cancellation).Result);
+
+            foreach (var c in Collectors)
+            {
+                if (IdCenter == c.CenterId)
+                {
+                    list.Add(c);
+                }
+            }
+
+            IEnumerable<Collector> BuildingsByCenter = list;
+            return BuildingsByCenter;
+        }
+
     }
 }

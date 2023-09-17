@@ -16,7 +16,9 @@ namespace Centre.Domain.Models
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public Antenna Antenna { get; set; }
+        public Guid CenterId { get; set; }
+
+        public virtual IList<FicheMedicale> FicheMedicales { get; set; }
 
     }
 }

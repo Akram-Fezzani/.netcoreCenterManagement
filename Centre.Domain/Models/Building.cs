@@ -19,7 +19,7 @@ namespace Centre.Domain.Models
         public int Age { get; set; }
         public int rotation { get; set; }
 
-        
+        public Guid TypeId { get; set; }
 
         public Guid CenterId { get; set; }
     }
